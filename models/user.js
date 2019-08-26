@@ -1,26 +1,6 @@
 const getDb = require('../database/mongo').getDb;
 const modelCollection = 'users';
 
-
-/**
- * @swagger
- *  definitions:
- *  User:
- *     type: object
- *  properties:
- *     _id:
- *         type: string
- *     email:
- *         type: string
- *     password:
- *         type: string
- *     token:
- *         type: integer
- *     required:
- *      - email
- *      - password
- */
-
 class User {
     constructor({ email, password, token = 0 }) {
         this.email = email;

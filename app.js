@@ -2,9 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const port = require('./config').port;
 
-
-const swaggerUI = require('swagger-ui-express');
-const swaggerJSDoc = require('swagger-jsdoc');
 const db = require('./database/mongo');
 const userRouter = require('./routes/users');
 const dvdsRouter = require('./routes/dvds');
@@ -34,11 +31,6 @@ const options = {
 }
 
 // obiekt specyfikacji ?
-
-const specs = swaggerJSDoc(options);
-
-app.use('/swagger-api-doc', swaggerUI.serve, swaggerUI.setup(specs));
-
 
 app.use(bodyParser.json());
 app.use('/users', userRouter);
